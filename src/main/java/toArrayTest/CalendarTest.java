@@ -31,6 +31,6 @@ public class CalendarTest {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
+        System.out.println("1");
     }
 }
