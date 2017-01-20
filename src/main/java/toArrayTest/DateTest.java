@@ -20,7 +20,7 @@ public class DateTest {
         Duration thirtyDay = Duration.ofDays(30);
         System.out.println(thirtyDay);
 
-
+        System.out.println("2");
 
     }
 }
