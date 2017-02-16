@@ -10,13 +10,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 联通身份证三元素
  * Created by nzm on 2017/2/16.
  */
-public class OnlineTime {
+public class ThreeElement {
     /**
      * 产品类型, 根据需要填写
      */
-    public static final String PRODUCT_TYPE = "MOBILE_ONLINE_TIME_LT";
+    public static final String PRODUCT_TYPE = "THREE_ELEMENT";
     /**
      * 访问URL
      */
@@ -37,9 +38,16 @@ public class OnlineTime {
      * @return
      * @throws Exception
      */
-    public static String getIdentityPhotoResult(String mobile) throws Exception {
+    public static String getIdentityPhotoResult(String name, String mobile, String idCard) throws Exception {
         Map<String, String> request = new HashMap<>();
         JSONObject item = new JSONObject();
+        // 证件类型(固定)
+        item.put("certificate_type", "ID_CARD");
+        // 身份证号码
+        item.put("id_card", idCard);
+        //姓名
+        item.put("name", name);
+        //手机号
         item.put("mobile", mobile);
         //将发送的信息加密
         String encrypt = AesUtil.encrypt(PRIVATE_KEY, item.toString());
