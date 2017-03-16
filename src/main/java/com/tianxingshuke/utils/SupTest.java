@@ -40,7 +40,6 @@ public abstract class SupTest {
         long start = System.currentTimeMillis();
         System.out.println("T1=" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS").format(new Date()));
 
-        //String reutrnResult = HttpUtil.sendXMLDataByPost(uri, returnXml);
         String reutrnResult = OkHttpUtils.postString(uri, returnXml);
 
         System.out.println("T2=" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS").format(new Date()) + ",time length:" + (System.currentTimeMillis() - start));

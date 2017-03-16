@@ -1,4 +1,4 @@
-import ZsService.ThreeElement;
+import RtService.RtThreeElement;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
@@ -7,14 +7,15 @@ import java.io.File;
 import java.io.FileReader;
 
 /**
+ * 联通三要素
  * Created by nzm on 2017/2/16.
  */
 public class ThreeElementTest {
-    Logger LOGGER = Logger.getLogger(ThreeElementTest.class);
+    private Logger LOGGER = Logger.getLogger(ThreeElementTest.class);
 
     @Test
     public void getIdentityPhotoCheckFromHxkj() {
-        File file = new File("D:\\text1.txt");
+        File file = new File("D:\\text0.txt");
         try {
             FileReader reader = new FileReader(file);
             BufferedReader buf = new BufferedReader(reader);
@@ -22,14 +23,15 @@ public class ThreeElementTest {
             while ((str = buf.readLine()) != null) {
                 String[] a = str.split(",");
 
-                String name = a[0].trim();
-                String mob = a[1].trim();
-                String idCard = a[2].trim();
+                String name = a[2].trim();
+                String idCard = a[0].trim();
+                String phone = a[1].trim();
                 long start = System.currentTimeMillis();
                 System.out.println();
-                String identityCheck = ThreeElement.getIdentityPhotoResult(name, mob, idCard);
+                RtThreeElement.threeElement(name,idCard,phone);
+
                 LOGGER.info("耗时" + (System.currentTimeMillis() - start) + "毫秒");
-                LOGGER.info(identityCheck);
+                //LOGGER.info(identityCheck);
                 System.out.println("---------------------------");
             }
 

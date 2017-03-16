@@ -24,8 +24,8 @@ public class OkHttpUtils {
     private static Logger LOG = Logger.getLogger(OkHttpUtils.class);
     private static OkHttpClient client = new OkHttpClient();
     private static OkHttpClient clientNoLimit = new OkHttpClient();//没有超时时间限制
-    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-    public static final MediaType STRING = MediaType.parse("text/x-markdown; charset=utf-8");
+    private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+    private static final MediaType STRING = MediaType.parse("text/x-markdown; charset=utf-8");
 
     static {
         //超时配置
