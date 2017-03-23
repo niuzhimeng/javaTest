@@ -19,9 +19,10 @@ public class toArrayTest {
         map.put("1", "value1");
         map.put("2", "value2");
         map.put("3", "value3");
-        for (Map.Entry<String, String> entries : map.entrySet()) {
-            System.out.println(entries.getKey() + entries.getValue());
-        }
-//2
+//        for (Map.Entry<String, String> entries : map.entrySet()) {
+//            System.out.println(entries.getKey() + entries.getValue());
+//        }
+        map.forEach((key, value) -> System.out.println(key + value));
+
     }
 }

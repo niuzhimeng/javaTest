@@ -16,7 +16,7 @@ public class ListRemoveSame {
         list.add("2");
        // list = removeSame(list);
         Set<String> set = new HashSet<>(list);
-        list.clear();
+        //list.clear();
         list.addAll(set);
         for (String s : list){
             System.out.println(s);

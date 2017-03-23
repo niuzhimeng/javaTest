@@ -42,10 +42,7 @@ public class YaoYaoYaun {
 
     @Test
     public void lambda5() {
-        Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 0).map(i -> {
-            System.out.println(i);
-            return i + 10;
-        }).forEach(item -> System.out.println(item));
+        Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 0).mapToDouble(i -> i + 10).forEach(item -> System.out.println(item));
     }
 }
 

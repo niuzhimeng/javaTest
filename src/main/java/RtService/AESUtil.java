@@ -9,12 +9,12 @@ import javax.crypto.spec.SecretKeySpec;
  * Created by nzm on 2017/3/13.
  */
 public class AESUtil {
-    static String e = "0101301819882030";
+    private static String e = "0101301819882030";
 
     /**
      * 加密
      */
-    public static String Encrypt(String src, String key) throws Exception {
+    static String Encrypt(String src, String key) throws Exception {
         byte[] raw = key.getBytes();
         SecretKeySpec skeySpec = new SecretKeySpec(raw, "AES");
         Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
@@ -39,8 +39,7 @@ public class AESUtil {
             byte[] encrypted1 = hex2byte(src.getBytes());
             try {
                 byte[] original = cipher.doFinal(encrypted1);
-                String originalString = new String(original);
-                return originalString;
+                return new String(original);
             } catch (Exception e) {
                 System.out.println(e.toString());
                 return null;

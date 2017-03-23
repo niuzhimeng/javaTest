@@ -8,7 +8,10 @@ import org.junit.Test;
 public class LombokTest {
     @Test
     public void test() {
-
+        Lombok lombok = new Lombok();
+        lombok.setName("nzm");
+        lombok.setId("21");
+        System.out.println(Lombok.OutStr(null));
     }
 
 }
